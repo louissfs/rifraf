@@ -1,38 +1,179 @@
-.App {
-  text-align: center;
+
+/* ================================
+   RIFRAF — GLOBAL NAVBAR
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 0 5%;
+  background: #080808;
+  border: none;
+  transition:
+    background 0.35s ease,
+    backdrop-filter 0.35s ease,
+    -webkit-backdrop-filter 0.35s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar.scrolled {
+  background: rgba(8, 8, 8, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-container {
+  min-height: 82px;
+  max-width: 1800px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Anton', sans-serif;
+  font-size: 37px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: #f3f1eb;
+  transition: transform 0.25s ease;
+}
+
+.logo:hover {
+  transform: skewX(-5deg);
+}
+
+.logo .a {
+  color: #f3f1eb;
+}
+
+.logo .b {
+  color: #777;
+}
+
+/* NAVIGATION LINKS */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links a {
+  position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 12px 22px;
+  color: #888;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 22px;
+  width: 0;
+  height: 2px;
+  background: #e94736;
+  transition: width 0.25s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-links a:hover {
+  color: #fff;
+  border-color: #333;
+}
+
+.nav-links a:hover::before {
+  width: calc(100% - 44px);
+}
+
+.nav-links a.active {
+  color: #fff;
+  border-color: #444;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-links a.active::before {
+  width: calc(100% - 44px);
+}
+
+/* PAGE OFFSET FOR FIXED NAVBAR */
+
+main {
+  padding-top: 82px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 5%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-container {
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 29px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-links a {
+    padding: 11px 12px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .nav-links a::before {
+    left: 12px;
+  }
+
+  .nav-links a:hover::before,
+  .nav-links a.active::before {
+    width: calc(100% - 24px);
+  }
+
+  main {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-links a {
+    padding: 10px 8px;
+    font-size: 8px;
   }
 }
