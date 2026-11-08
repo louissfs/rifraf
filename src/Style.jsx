@@ -1,3 +1,4 @@
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./Style.css";
 
@@ -360,19 +361,9 @@ export default function Style() {
     <main className="mb-page">
 
       {/* HEADER */}
-
-      <header className="mb-header">
-        <a className="mb-logo" href="/">
-          CONGO<span>!</span>
-        </a>
-
-        <span className="mb-header-note">
-          A VISUAL ARCHIVE
-        </span>
-      </header>
+      
 
       {/* HERO */}
-
       <section className="mb-hero">
         <div className="mb-hero-top">
           <span>STREET CULTURE / VISUAL DIARY</span>
@@ -401,7 +392,6 @@ export default function Style() {
       </section>
 
       {/* VIDEO */}
-
       <section className="mb-video-section">
         <div className="mb-section-heading">
           <span>01 / MOVING IMAGE</span>
@@ -447,7 +437,6 @@ export default function Style() {
       </section>
 
       {/* COMMUNITY UPLOAD */}
-
       <section className="mb-upload-section">
         <div className="mb-section-heading">
           <span>02 / COMMUNITY UPLOAD</span>
@@ -455,7 +444,6 @@ export default function Style() {
         </div>
 
         <div className="mb-upload-content">
-
           <div className="mb-upload-intro">
             <span className="mb-section-label">
               YOUR SCENE. YOUR IMAGE.
@@ -476,7 +464,6 @@ export default function Style() {
             className="mb-upload-form"
             onSubmit={handleUpload}
           >
-
             <label
               className="mb-upload-label"
               htmlFor="community-image"
@@ -554,15 +541,12 @@ export default function Style() {
               JPG / PNG / WEBP / GIF ONLY ·
               MAXIMUM FILE SIZE 10 MB
             </p>
-
           </form>
         </div>
       </section>
 
       {/* GALLERY */}
-
       <section className="mb-gallery-section">
-
         <div className="mb-gallery-heading">
           <div>
             <span className="mb-section-label">
@@ -582,7 +566,6 @@ export default function Style() {
         </div>
 
         {/* FILTERS */}
-
         <div className="mb-filters">
           {["All", ...tags].map((scene) => (
             <button
@@ -606,7 +589,6 @@ export default function Style() {
         </div>
 
         {/* MASONRY COLLECTION */}
-
         <div className="mb-masonry">
           {images.map((image, index) => (
             <button
@@ -619,7 +601,6 @@ export default function Style() {
               aria-label={`Open ${image.scene} image`}
             >
               <div className="mb-image-frame">
-
                 <img
                   src={image.src}
                   alt={`${image.scene} street culture`}
@@ -640,7 +621,6 @@ export default function Style() {
                 <span className="mb-image-open">
                   ↗
                 </span>
-
               </div>
             </button>
           ))}
@@ -648,14 +628,12 @@ export default function Style() {
       </section>
 
       {/* FOOTER */}
-
       <footer className="mb-footer">
-        <span>CONGO! — VISUAL ARCHIVE</span>
+        <span>RIFRAF! — VISUAL ARCHIVE</span>
         <span>MADE FOR THE CULTURE.</span>
       </footer>
 
       {/* LIGHTBOX */}
-
       {lightboxImage && (
         <div
           className="mb-lightbox"
@@ -689,7 +667,6 @@ export default function Style() {
           </div>
         </div>
       )}
-
     </main>
   );
 }
